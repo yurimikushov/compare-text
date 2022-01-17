@@ -1,5 +1,27 @@
+import { useState } from 'react'
+import TextArea from 'components/TextArea'
+
 const App = () => {
-  return <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+  const [text, setText] = useState('')
+
+  return (
+    <div className='p-5 flex gap-3'>
+      <TextArea
+        className='w-1/2'
+        value={text}
+        rows={12}
+        placeholder='Введите текст'
+        onChange={setText}
+      />
+      <TextArea
+        className='w-1/2'
+        value={text}
+        rows={12}
+        placeholder='Введите текст'
+        onChange={setText}
+      />
+    </div>
+  )
 }
 
 export default App
