@@ -17,12 +17,15 @@ const TextAreaWithHighlighter = ({
     textAreaRef.current.addEventListener('scroll', handleScroll)
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       textAreaRef.current.removeEventListener('scroll', handleScroll)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
     handleScroll()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [valueChanges])
 
   const handleScroll = useCallback(() => {
