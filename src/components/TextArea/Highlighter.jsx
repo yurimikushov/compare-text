@@ -16,7 +16,7 @@ const Highlighter = forwardRef(({ className, tokens }, ref) => {
           })}
         >
           {value}
-          <br />
+          {value.endsWith('\n') && <br />}
         </span>
       ))}
     </div>
