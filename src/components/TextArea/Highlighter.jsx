@@ -1,5 +1,7 @@
 import { forwardRef } from 'react'
 import cn from 'classnames'
+import shouldConcatLeft from './utils/shouldConcatLeft'
+import shouldConcatRight from './utils/shouldConcatRight'
 
 const Highlighter = forwardRef(({ className, tokens }, ref) => {
   return (
@@ -13,6 +15,8 @@ const Highlighter = forwardRef(({ className, tokens }, ref) => {
           className={cn('rounded-sm', {
             'bg-green-300': added,
             'bg-red-300': removed,
+            'rounded-l-none': shouldConcatLeft(tokens, i),
+            'rounded-r-none': shouldConcatRight(tokens, i),
           })}
         >
           {value}
