@@ -1,7 +1,7 @@
 {
-  "name": "find-diff-in-texts",
+  "name": "find-diff-between-texts",
   "version": "0.1.0",
-  "homepage": "https://yurimikushov.github.io/find-diff-in-texts",
+  "homepage": "https://yurimikushov.github.io/find-diff-between-texts",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
