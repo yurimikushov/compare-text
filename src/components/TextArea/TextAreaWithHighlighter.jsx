@@ -38,7 +38,7 @@ const TextAreaWithHighlighter = ({
   }
 
   return (
-    <div className={cn(className, 'relative bg-white')}>
+    <div className={cn(className, 'relative bg-white rounded-md')}>
       <TextArea
         {...props}
         ref={textAreaRef}
