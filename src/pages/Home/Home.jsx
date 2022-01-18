@@ -29,21 +29,19 @@ const HomePage = () => {
     handleTrimAndDiff(false)
   }
 
-  const handleDisplayExample = () => {
+  const handleTrimAndDiff = (byWords) => {
+    setText1((text1) => text1.trim())
+    setText2((text2) => text2.trim())
+    handleDiff(text1.trim(), text2.trim(), byWords)
+  }
+
+  const handleFillOutExampleTexts = () => {
     handleResetDiff()
 
     const { text1, text2 } = getExampleTexts()
 
     setText1(text1)
     setText2(text2)
-
-    handleTrimAndDiff(text1, text2, true)
-  }
-
-  const handleTrimAndDiff = (byWords) => {
-    setText1((text1) => text1.trim())
-    setText2((text2) => text2.trim())
-    handleDiff(text1.trim(), text2.trim(), byWords)
   }
 
   return (
@@ -55,8 +53,8 @@ const HomePage = () => {
         <Button appearance='primary' onClick={handleDiffByLines}>
           Сравнить по строчно
         </Button>
-        <Button appearance='secondary' onClick={handleDisplayExample}>
-          Показать пример
+        <Button appearance='secondary' onClick={handleFillOutExampleTexts}>
+          Заполнить примером
         </Button>
       </div>
       <div className='mt-3 w-full flex gap-5'>
