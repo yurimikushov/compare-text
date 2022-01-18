@@ -14,7 +14,7 @@ const TextArea = ({ className, onChange, ...props }) => {
       {...props}
       className={cn(
         className,
-        'p-3 w-full shadow-sm',
+        'w-full shadow-sm',
         'rounded-md border border-gray-300',
         'outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500'
       )}
