@@ -10,7 +10,7 @@ const Highlighter = forwardRef(({ className, tokens }, ref) => {
       {tokens.map(({ added, removed, value }, i) => (
         <span
           key={`${i}:${value}`}
-          className={cn('p-px rounded-sm', {
+          className={cn('rounded-sm', {
             'bg-green-300': added,
             'bg-red-300': removed,
           })}
