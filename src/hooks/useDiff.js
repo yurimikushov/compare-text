@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import diffByLines from 'lib/diffByLines'
 
-const useDiff = (text1, text2) => {
+const useDiff = () => {
   const [{ text1Changes, text2Changes }, setDiff] = useState({
     text1Changes: [],
     text2Changes: [],
   })
 
-  const handleDiff = () => {
+  const handleDiff = (text1, text2) => {
     setDiff(diffByLines(text1, text2))
   }
 
