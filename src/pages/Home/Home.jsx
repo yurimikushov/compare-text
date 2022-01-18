@@ -5,6 +5,8 @@ import TextArea from 'components/TextArea'
 import Button from 'components/Button'
 import getExampleTexts from './utils/getExampleTexts'
 
+const MAX_TEXT_LENGTH = 2_000
+
 const HomePage = () => {
   const [text1, setText1] = useState('')
   const [text2, setText2] = useState('')
@@ -63,6 +65,7 @@ const HomePage = () => {
           value={text1}
           withHighlightingChanges
           valueChanges={text1Changes}
+          maxLength={MAX_TEXT_LENGTH}
           placeholder='Введите или вставьте текст'
           onChange={handleChangeText1}
         />
@@ -71,6 +74,7 @@ const HomePage = () => {
           value={text2}
           withHighlightingChanges
           valueChanges={text2Changes}
+          maxLength={MAX_TEXT_LENGTH}
           placeholder='Введите или вставьте текст'
           onChange={handleChangeText2}
         />
