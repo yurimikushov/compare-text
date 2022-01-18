@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import diffByWords from 'lib/diff/diffByWords'
 import diffByLines from 'lib/diff/diffByLines'
 
 const useDiff = () => {
@@ -7,8 +8,8 @@ const useDiff = () => {
     text2Changes: [],
   })
 
-  const handleDiff = (text1, text2) => {
-    const diff = diffByLines(text1, text2)
+  const handleDiff = (text1, text2, byWords = false) => {
+    const diff = byWords ? diffByWords(text1, text2) : diffByLines(text1, text2)
 
     setDiff({
       text1Changes: diff.filter(

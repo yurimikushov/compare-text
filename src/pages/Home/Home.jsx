@@ -21,10 +21,12 @@ const HomePage = () => {
     setText2(value)
   }
 
-  const handleTrimAndDiff = () => {
-    setText1((text1) => text1.trim())
-    setText2((text2) => text2.trim())
-    handleDiff(text1.trim(), text2.trim())
+  const handleDiffByWords = () => {
+    handleTrimAndDiff(true)
+  }
+
+  const handleDiffByLines = () => {
+    handleTrimAndDiff(false)
   }
 
   const handleDisplayExample = () => {
@@ -35,13 +37,20 @@ const HomePage = () => {
     setText1(text1)
     setText2(text2)
 
-    handleDiff(text1, text2)
+    handleTrimAndDiff(text1, text2, true)
+  }
+
+  const handleTrimAndDiff = (byWords) => {
+    setText1((text1) => text1.trim())
+    setText2((text2) => text2.trim())
+    handleDiff(text1.trim(), text2.trim(), byWords)
   }
 
   return (
     <Layout className='h-screen'>
       <div className='flex gap-3'>
-        <Button onClick={handleTrimAndDiff}>Сравнить</Button>
+        <Button onClick={handleDiffByWords}>Сравнить по словам</Button>
+        <Button onClick={handleDiffByLines}>Сравнить по строчно</Button>
         <Button onClick={handleDisplayExample}>Показать пример</Button>
       </div>
       <div className='mt-3 w-full flex gap-5'>
