@@ -49,9 +49,15 @@ const HomePage = () => {
   return (
     <Layout className='h-screen'>
       <div className='flex gap-3'>
-        <Button onClick={handleDiffByWords}>Сравнить по словам</Button>
-        <Button onClick={handleDiffByLines}>Сравнить по строчно</Button>
-        <Button onClick={handleDisplayExample}>Показать пример</Button>
+        <Button appearance='primary' onClick={handleDiffByWords}>
+          Сравнить по словам
+        </Button>
+        <Button appearance='primary' onClick={handleDiffByLines}>
+          Сравнить по строчно
+        </Button>
+        <Button appearance='secondary' onClick={handleDisplayExample}>
+          Показать пример
+        </Button>
       </div>
       <div className='mt-3 w-full flex gap-5'>
         <TextArea
