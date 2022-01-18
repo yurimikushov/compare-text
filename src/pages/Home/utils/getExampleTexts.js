@@ -8,7 +8,7 @@ From Marathon to Waterloo, in order categorical.`,
 My animation's comical, unusual, and whimsical,
 I'm quite adept at funny gags, comedic theory I have read,
 I know the kings of England, and I quote the fights historical,
- From wicked puns and stupid jokes to anvils that drop on your head.`,
+From wicked puns and stupid jokes to anvils that drop on your head.`,
   }
 }
 
