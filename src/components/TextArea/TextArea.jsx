@@ -1,26 +1,12 @@
-import cn from 'classnames'
+import BaseTextArea from './BaseTextArea'
+import TextAreaWithHighlighter from './TextAreaWithHighlighter'
 
-const TextArea = ({ className, onChange, ...props }) => {
-  const handleChange = (e) => {
-    if (!onChange) {
-      return
-    }
-
-    onChange(e.target.value)
+const TextArea = ({ withHighlightingChanges, valueChanges, ...props }) => {
+  if (!withHighlightingChanges) {
+    return <BaseTextArea {...props} />
   }
 
-  return (
-    <textarea
-      {...props}
-      className={cn(
-        className,
-        'w-full shadow-sm',
-        'rounded-md border border-gray-300',
-        'outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500'
-      )}
-      onChange={handleChange}
-    />
-  )
+  return <TextAreaWithHighlighter {...props} valueChanges={valueChanges} />
 }
 
 export default TextArea
