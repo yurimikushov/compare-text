@@ -8,6 +8,7 @@ const TextAreaWithHighlighter = ({
   value,
   valueChanges,
   onChange,
+  ...props
 }) => {
   const textAreaRef = useRef(null)
   const highlighterRef = useRef(null)
@@ -36,10 +37,10 @@ const TextAreaWithHighlighter = ({
   return (
     <div className={cn(className, 'relative bg-white')}>
       <TextArea
+        {...props}
         ref={textAreaRef}
         className={cn('absolute top-0 left-0 z-[2]', 'bg-transparent')}
         value={value}
-        placeholder='Введите текст'
         onChange={handleChange}
       />
       <Highlighter
