@@ -30,9 +30,9 @@ const Differ = () => {
           Заполнить примером
         </Button>
       </div>
-      <div className='mt-3 w-full flex gap-5'>
+      <div className='mt-3 w-full flex flex-col md:flex-row gap-5'>
         <TextArea
-          className='w-1/2 h-96'
+          className='w-full md:w-1/2 h-[35vh] max-h-72 md:h-96 md:max-h-[60vh]'
           value={text1}
           withHighlightingChanges
           valueChanges={text1Changes}
@@ -41,7 +41,7 @@ const Differ = () => {
           onChange={handleChangeText1}
         />
         <TextArea
-          className='w-1/2 h-96'
+          className='w-full md:w-1/2 h-[35vh] max-h-72 md:h-96 md:max-h-[60vh]'
           value={text2}
           withHighlightingChanges
           valueChanges={text2Changes}

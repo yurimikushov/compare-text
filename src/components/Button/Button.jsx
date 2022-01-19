@@ -6,8 +6,8 @@ const Button = ({ className, appearance = 'primary', children, ...props }) => {
       {...props}
       className={cn(
         className,
-        'py-2 px-4',
-        'text-sm font-medium rounded-md',
+        'p-2 md:py-2 md:px-4',
+        'text-xs xs:text-base font-medium rounded-md',
         'border shadow-sm outline-none',
         'focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
         {

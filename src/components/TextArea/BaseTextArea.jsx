@@ -17,6 +17,7 @@ const TextArea = forwardRef(({ className, onChange, ...props }, ref) => {
       className={cn(
         className,
         'w-full h-full p-3 shadow-sm resize-none',
+        'text-xs xs:text-base',
         'rounded-md border border-gray-300',
         'outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500'
       )}

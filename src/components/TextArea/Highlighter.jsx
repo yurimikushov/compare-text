@@ -7,7 +7,11 @@ const Highlighter = forwardRef(({ className, tokens }, ref) => {
   return (
     <div
       ref={ref}
-      className={cn(className, 'max-w-full max-h-[99%] overflow-hidden')}
+      className={cn(
+        className,
+        'max-w-full max-h-[99%] overflow-hidden',
+        'text-xs xs:text-base'
+      )}
     >
       {tokens.map(({ added, removed, value }, i) => (
         <span

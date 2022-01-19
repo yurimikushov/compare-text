@@ -26,7 +26,7 @@ const TextAreaWithHighlighter = ({
         ref={highlighterRef}
         className={cn(
           'absolute top-0 left-0 z-[1]',
-          'mt-px ml-px p-3',
+          'm-px ml-px p-3',
           'text-transparent pointer-events-none'
         )}
         tokens={valueChanges}
