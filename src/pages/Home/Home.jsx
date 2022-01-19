@@ -3,7 +3,7 @@ import Differ from './Differ'
 
 const HomePage = () => {
   return (
-    <Layout className='h-screen'>
+    <Layout>
       <Differ />
     </Layout>
   )
