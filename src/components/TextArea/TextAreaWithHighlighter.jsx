@@ -1,7 +1,7 @@
 import cn from 'classnames'
-import Highlighter from './Highlighter'
+import useTextAreaWithHighlighter from './hooks/useTextAreaWithHighlighter'
 import TextArea from './BaseTextArea'
-import { useCallback, useEffect, useRef } from 'react'
+import Highlighter from './Highlighter'
 
 const TextAreaWithHighlighter = ({
   className,
@@ -10,32 +10,8 @@ const TextAreaWithHighlighter = ({
   onChange,
   ...props
 }) => {
-  const textAreaRef = useRef(null)
-  const highlighterRef = useRef(null)
-
-  useEffect(() => {
-    textAreaRef.current.addEventListener('scroll', handleScroll)
-
-    return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      textAreaRef.current.removeEventListener('scroll', handleScroll)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    handleScroll()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [valueChanges])
-
-  const handleScroll = useCallback(() => {
-    highlighterRef.current.scrollTop = textAreaRef.current.scrollTop
-  }, [])
-
-  const handleChange = (value) => {
-    handleScroll()
-    onChange(value)
-  }
+  const { textAreaRef, highlighterRef, handleChange } =
+    useTextAreaWithHighlighter(valueChanges, onChange)
 
   return (
     <div className={cn(className, 'relative bg-white rounded-md')}>
