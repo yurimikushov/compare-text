@@ -1,6 +1,7 @@
 import diff from './diff'
 import isPartText1 from './isPartText1'
 import isPartText2 from './isPartText2'
+import markRightSideWhiteSpaceAsChanged from './markRightSideWhiteSpaceAsChanged'
 
 const tokenize = (text) => {
   // Tokenizing can be optimized by combining 'replaceAll()',
@@ -22,8 +23,12 @@ const diffByWords = (text1, text2) => {
 
   return {
     diff: diffByWords,
-    text1Changes: diffByWords.filter(isPartText1),
-    text2Changes: diffByWords.filter(isPartText2),
+    text1Changes: markRightSideWhiteSpaceAsChanged(
+      diffByWords.filter(isPartText1)
+    ),
+    text2Changes: markRightSideWhiteSpaceAsChanged(
+      diffByWords.filter(isPartText2)
+    ),
   }
 }
 
