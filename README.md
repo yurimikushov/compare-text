@@ -1,5 +1,7 @@
 # Find diff between texts
 
+A text comparator based on the [LCS](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem) finding algorithm.
+
 ![Preview](docs/img/preview.png)
 
 ## Development
