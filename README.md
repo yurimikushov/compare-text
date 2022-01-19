@@ -1,5 +1,7 @@
 # Find diff between texts
 
+![Preview](docs/img/preview.png)
+
 ## Development
 
 Clone this repository, if you didn't it
