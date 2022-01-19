@@ -9,15 +9,13 @@ const useDiff = () => {
   })
 
   const handleDiff = (text1, text2, byWords = false) => {
-    const diff = byWords ? diffByWords(text1, text2) : diffByLines(text1, text2)
+    const { text1Changes, text2Changes } = byWords
+      ? diffByWords(text1, text2)
+      : diffByLines(text1, text2)
 
     setDiff({
-      text1Changes: diff.filter(
-        ({ added, removed }) => removed || (!added && !removed)
-      ),
-      text2Changes: diff.filter(
-        ({ added, removed }) => added || (!added && !removed)
-      ),
+      text1Changes,
+      text2Changes,
     })
   }
 

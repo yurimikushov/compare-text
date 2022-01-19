@@ -1,4 +1,6 @@
 import diff from './diff'
+import isPartText1 from './isPartText1'
+import isPartText2 from './isPartText2'
 
 const tokenize = (text) => {
   // Tokenizing can be optimized by combining 'replaceAll()',
@@ -16,7 +18,13 @@ const tokenize = (text) => {
 }
 
 const diffByWords = (text1, text2) => {
-  return diff(tokenize(text1), tokenize(text2))
+  const diffByWords = diff(tokenize(text1), tokenize(text2))
+
+  return {
+    diff: diffByWords,
+    text1Changes: diffByWords.filter(isPartText1),
+    text2Changes: diffByWords.filter(isPartText2),
+  }
 }
 
 export default diffByWords
