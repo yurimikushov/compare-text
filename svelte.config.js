@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto'
 import preprocess from 'svelte-preprocess'
+import path from 'path'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,9 +14,13 @@ const config = {
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
 
-    // Override http methods in the Todo forms
-    methodOverride: {
-      allowed: ['PATCH', 'DELETE']
+    vite: {
+      resolve: {
+        alias: {
+          components: path.resolve('./src/components'),
+          lib: path.resolve('./src/lib')
+        }
+      }
     }
   }
 }
