@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+  import Layout from 'layouts/Layout'
   import Home from 'pages/Home'
 </script>
 
@@ -7,4 +8,6 @@
   <title>Compare text</title>
 </svelte:head>
 
-<Home />
+<Layout>
+  <Home />
+</Layout>
