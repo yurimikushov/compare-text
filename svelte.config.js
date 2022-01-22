@@ -24,6 +24,7 @@ const config = {
           components: path.resolve('./src/components'),
           layouts: path.resolve('./src/layouts'),
           pages: path.resolve('./src/pages'),
+          modules: path.resolve('./src/modules'),
           lib: path.resolve('./src/lib')
         }
       }
