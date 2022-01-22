@@ -2,12 +2,13 @@
   import cn from 'classnames'
   import type { Appearance } from './Button.props'
 
+  export let className = ''
   export let appearance: Appearance = 'primary'
 </script>
 
 <button
   class={cn(
-    $$props.class,
+    className,
     'py-2 px-4',
     'text-base font-medium rounded-md',
     'border shadow-sm outline-none',
