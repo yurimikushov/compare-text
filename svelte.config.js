@@ -1,6 +1,8 @@
-import adapter from '@sveltejs/adapter-auto'
+import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
 import path from 'path'
+
+const dev = process.env.NODE_ENV === 'development'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +11,9 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: 'index.html'
+    }),
 
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
@@ -22,7 +26,12 @@ const config = {
           lib: path.resolve('./src/lib')
         }
       }
-    }
+    },
+
+    paths: {
+      base: dev ? '' : '/find-diff-between-texts'
+    },
+    appDir: 'internal'
   }
 }
 
