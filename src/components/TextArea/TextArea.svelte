@@ -3,7 +3,7 @@
   import BaseTextArea from './BaseTextArea.svelte'
   import TextAreaWithHighlighter from './TextAreaWithHighlighter.svelte'
 
-  export let className: string
+  export let className = ''
   export let value: string
   export let placeholder = ''
   export let withHighlightingChanges = false

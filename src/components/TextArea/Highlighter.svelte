@@ -4,7 +4,7 @@
   import shouldConcatLeft from './utils/shouldConcatLeft'
   import shouldConcatRight from './utils/shouldConcatRight'
 
-  export let className: string
+  export let className = ''
   export let tokens: Array<Token>
 </script>
 

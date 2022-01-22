@@ -4,7 +4,7 @@
   import BaseTextArea from './BaseTextArea.svelte'
   import Highlighter from './Highlighter.svelte'
 
-  export let className: string
+  export let className = ''
   export let value: string
   export let valueChanges: Array<Token>
 </script>

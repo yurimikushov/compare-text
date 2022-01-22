@@ -1,7 +1,7 @@
 <script lang="ts">
   import cn from 'classnames'
 
-  export let className: string
+  export let className = ''
   export let value: string
   export let placeholder = ''
 </script>
