@@ -27,7 +27,7 @@ npm run prepare
 Run the app in `development` mode on `localhost:3000`
 
 ```
-npm run start
+npm run dev
 ```
 
 Or build the app for `production` to the `build` folder
