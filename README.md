@@ -1,4 +1,4 @@
-# Find diff between texts
+# Text comparator
 
 A text comparator based on the [LCS](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem) finding algorithm.
 
@@ -9,7 +9,7 @@ A text comparator based on the [LCS](https://en.wikipedia.org/wiki/Longest_commo
 Clone this repository, if you didn't it
 
 ```
-git clone https://github.com/yurimikushov/find-diff-between-texts.git
+git clone https://github.com/yurimikushov/text-comparator.git
 ```
 
 Install deps

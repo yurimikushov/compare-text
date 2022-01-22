@@ -30,7 +30,7 @@ const config = {
     },
 
     paths: {
-      base: dev ? '' : '/find-diff-between-texts'
+      base: dev ? '' : '/text-comparator'
     },
     appDir: 'internal'
   }
