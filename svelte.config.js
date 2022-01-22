@@ -22,6 +22,7 @@ const config = {
       resolve: {
         alias: {
           components: path.resolve('./src/components'),
+          layouts: path.resolve('./src/layouts'),
           pages: path.resolve('./src/pages'),
           lib: path.resolve('./src/lib')
         }
