@@ -15,7 +15,8 @@ const createDiff = () => {
     },
     diffByWords: (text1: string, text2: string) => {
       set(diffByWords(text1, text2))
-    }
+    },
+    reset: () => set({ text1Changes: [], text2Changes: [] })
   }
 }
 

@@ -15,6 +15,8 @@
   const handleFiilInExample = () => {
     texts.fillInExample()
   }
+
+  texts.subscribe(diff.reset)
 </script>
 
 <div class="flex items-center gap-3">
