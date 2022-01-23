@@ -8,6 +8,7 @@
   export let className = ''
   export let value: string
   export let valueChanges: Array<Token>
+  export let placeholder = ''
 
   let textArea: HTMLTextAreaElement
   let highlighter: HTMLDivElement
@@ -26,6 +27,7 @@
     bind:ref={textArea}
     className={cn('absolute top-0 left-0 z-[2]', 'bg-transparent')}
     bind:value
+    {placeholder}
     on:scroll={handleScroll}
   />
   <Highlighter

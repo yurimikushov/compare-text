@@ -11,7 +11,12 @@
 </script>
 
 {#if withHighlightingChanges}
-  <TextAreaWithHighlighter {className} bind:value {valueChanges} />
+  <TextAreaWithHighlighter
+    {className}
+    bind:value
+    {valueChanges}
+    {placeholder}
+  />
 {:else}
   <BaseTextArea {className} bind:value {placeholder} />
 {/if}
