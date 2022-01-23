@@ -4,11 +4,13 @@
   import shouldConcatLeft from './utils/shouldConcatLeft'
   import shouldConcatRight from './utils/shouldConcatRight'
 
+  export let ref: HTMLDivElement
   export let className = ''
   export let tokens: Array<Token>
 </script>
 
 <div
+  bind:this={ref}
   class={cn(
     className,
     'w-full max-w-full h-full max-h-[99%] overflow-hidden',
