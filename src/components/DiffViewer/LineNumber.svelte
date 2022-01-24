@@ -5,6 +5,6 @@
   export let number: number
 </script>
 
-<div class={cn(className, 'text-gray-500')}>
+<div class={cn(className, 'text-gray-500 text-right')}>
   {number}
 </div>
