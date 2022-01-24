@@ -8,6 +8,11 @@ const createDiff = () => {
   return {
     subscribe,
     buildDiff: (text1: string, text2: string) => {
+      if (text1.length === 0 && text2.length === 0) {
+        set({ left: [], right: [] })
+        return
+      }
+
       const linesDiff = diffByLines(text1, text2)
       const { left, right } = splitDiff(linesDiff)
 
