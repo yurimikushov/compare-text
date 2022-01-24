@@ -11,16 +11,16 @@ const createDiff = () => {
       const linesDiff = diffByLines(text1, text2)
       const { left, right } = splitDiff(linesDiff)
 
-      const result: Diff = { left: [], right: [] }
+      const diff: Diff = { left: [], right: [] }
 
       for (let i = 0; i < left.length; i++) {
-        result.left.push({
+        diff.left.push({
           ...left[i],
           dummy: left[i].value.length === 0,
           childs: []
         })
 
-        result.right.push({
+        diff.right.push({
           ...right[i],
           dummy: right[i].value.length === 0,
           childs: []
@@ -30,17 +30,17 @@ const createDiff = () => {
 
         wordsDiff.forEach((token) => {
           if (token.value.length > 0 && token.removed) {
-            result.left[i].childs.push(token)
+            diff.left[i].childs.push(token)
           } else if (token.value.length > 0 && token.added) {
-            result.right[i].childs.push(token)
+            diff.right[i].childs.push(token)
           } else {
-            result.left[i].childs.push(token)
-            result.right[i].childs.push(token)
+            diff.left[i].childs.push(token)
+            diff.right[i].childs.push(token)
           }
         })
       }
 
-      set(result)
+      set(diff)
     },
     reset: () => set({ left: [], right: [] })
   }
