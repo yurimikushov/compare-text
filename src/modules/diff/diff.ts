@@ -8,8 +8,8 @@ const createDiff = () => {
   return {
     subscribe,
     buildDiff: (text1: string, text2: string) => {
-      const { diff } = diffByLines(text1, text2)
-      const { left, right } = splitDiff(diff)
+      const linesDiff = diffByLines(text1, text2)
+      const { left, right } = splitDiff(linesDiff)
 
       const result: Diff = { left: [], right: [] }
 
@@ -26,9 +26,9 @@ const createDiff = () => {
           childs: []
         })
 
-        const { diff } = diffByWords(left[i].value, right[i].value)
+        const wordsDiff = diffByWords(left[i].value, right[i].value)
 
-        diff.forEach((token) => {
+        wordsDiff.forEach((token) => {
           if (token.value.length > 0 && token.removed) {
             result.left[i].childs.push(token)
           } else if (token.value.length > 0 && token.added) {
