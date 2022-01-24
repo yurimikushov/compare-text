@@ -12,7 +12,7 @@
   class={cn(
     className,
     'table w-full py-2',
-    'rounded bg-white border-2 border-gray-200'
+    'rounded-md bg-white border border-gray-200'
   )}
 >
   {#each diff.left as _, i (i)}
