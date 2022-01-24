@@ -1,22 +1,19 @@
 <script lang="ts">
-  import type { Token } from 'lib/diff/types'
-  import BaseTextArea from './BaseTextArea.svelte'
-  import TextAreaWithHighlighter from './TextAreaWithHighlighter.svelte'
+  import cn from 'classnames'
 
   export let className = ''
   export let value: string
   export let placeholder = ''
-  export let withHighlightingChanges = false
-  export let valueChanges: Array<Token> = []
 </script>
 
-{#if withHighlightingChanges}
-  <TextAreaWithHighlighter
-    {className}
-    bind:value
-    {valueChanges}
-    {placeholder}
-  />
-{:else}
-  <BaseTextArea {className} bind:value {placeholder} />
-{/if}
+<textarea
+  class={cn(
+    className,
+    'w-full h-full p-3',
+    'text-base shadow-sm resize-none',
+    'rounded-md border border-gray-300',
+    'outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500'
+  )}
+  bind:value
+  {placeholder}
+/>
