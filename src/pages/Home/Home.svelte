@@ -11,8 +11,6 @@
   const handleFiilInExample = () => {
     texts.fillInExample()
   }
-
-  texts.subscribe(diff.reset)
 </script>
 
 {#if $diff.left.length > 0}
