@@ -1,8 +1,13 @@
 import type { Token } from 'lib/diff/types'
 
 type Diff = {
-  text1Changes: Array<Token>
-  text2Changes: Array<Token>
+  left: Array<Line>
+  right: Array<Line>
 }
 
-export type { Diff }
+type Line = Omit<Token, 'value'> & {
+  dummy: boolean
+  childs: Array<Token>
+}
+
+export type { Diff, Line }
