@@ -6,6 +6,7 @@ type TokenType = 'added' | 'removed' | 'unchanged'
 const token = (type: TokenType, value: string): Token => ({
   added: type === 'added',
   removed: type === 'removed',
+  unchanged: type === 'unchanged',
   value
 })
 

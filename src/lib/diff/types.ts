@@ -1,6 +1,7 @@
 export type Token = {
   added: boolean
   removed: boolean
+  unchanged: boolean
   value: string
 }
 
