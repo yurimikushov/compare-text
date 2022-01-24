@@ -24,12 +24,12 @@
 {/if}
 <div class="mt-3 flex justify-center items-center gap-3">
   <TextArea
-    className="w-1/2 h-96"
+    className="w-1/2 h-80"
     bind:value={$texts.text1}
     placeholder="Type or paste a text"
   />
   <TextArea
-    className="w-1/2 h-96"
+    className="w-1/2 h-80"
     bind:value={$texts.text2}
     placeholder="Type or paste a text"
   />
