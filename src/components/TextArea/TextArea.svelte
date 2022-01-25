@@ -9,8 +9,7 @@
 <textarea
   class={cn(
     className,
-    'w-full h-full p-3',
-    'text-base shadow-sm resize-none',
+    'p-3 text-base shadow-sm resize-none',
     'rounded-md border border-gray-300',
     'outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500'
   )}
