@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
   import Layout from 'layouts/Layout'
-  import Home from 'pages/Home'
+  import TextComparator from './_TextComparator.svelte'
 </script>
 
 <Layout>
-  <Home />
+  <TextComparator />
 </Layout>
