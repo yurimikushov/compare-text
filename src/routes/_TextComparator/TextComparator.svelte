@@ -3,7 +3,7 @@
   import diff from 'modules/diff'
   import DiffViewer from 'components/DiffViewer'
   import Button from 'components/Button'
-  import TextArea from 'components/TextArea'
+  import TextField from './TextField.svelte'
 
   const handleCompare = () => {
     diff.buildDiff($texts.text1, $texts.text2)
@@ -23,19 +23,19 @@
   <DiffViewer className="my-3" diff={$diff} />
 {/if}
 <div class="mt-3 flex justify-center items-center gap-3">
-  <TextArea
+  <TextField
     className="w-1/2 h-80"
     bind:value={$texts.text1}
     placeholder="Type or paste a text"
     maxLength={TEXT_MAX_LENGTH}
   />
-  <TextArea
+  <TextField
     className="w-1/2 h-80"
     bind:value={$texts.text2}
     placeholder="Type or paste a text"
     maxLength={TEXT_MAX_LENGTH}
   />
 </div>
-<div class="mt-3 flex justify-center">
+<div class="mt-5 flex justify-center">
   <Button appearance="primary" on:click={handleCompare}>Compare</Button>
 </div>
