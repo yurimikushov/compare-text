@@ -1,5 +1,5 @@
 <script lang="ts">
-  import texts from 'modules/texts'
+  import texts, { TEXT_MAX_LENGTH } from 'modules/texts'
   import diff from 'modules/diff'
   import DiffViewer from 'components/DiffViewer'
   import Button from 'components/Button'
@@ -27,11 +27,13 @@
     className="w-1/2 h-80"
     bind:value={$texts.text1}
     placeholder="Type or paste a text"
+    maxLength={TEXT_MAX_LENGTH}
   />
   <TextArea
     className="w-1/2 h-80"
     bind:value={$texts.text2}
     placeholder="Type or paste a text"
+    maxLength={TEXT_MAX_LENGTH}
   />
 </div>
 <div class="mt-3 flex justify-center">
