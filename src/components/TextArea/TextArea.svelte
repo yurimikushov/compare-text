@@ -4,6 +4,7 @@
   export let className = ''
   export let value: string
   export let placeholder = ''
+  export let maxLength: number | null = null
 </script>
 
 <textarea
@@ -15,4 +16,5 @@
   )}
   bind:value
   {placeholder}
+  {maxLength}
 />
