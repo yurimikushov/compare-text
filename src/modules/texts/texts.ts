@@ -4,7 +4,7 @@ import type { Texts } from './model'
 import getExampleTexts from './utils/getExampleTexts'
 
 const createTexts = () => {
-  const { subscribe, set } = writable<Texts>({
+  const { subscribe, set, update } = writable<Texts>({
     text1: '',
     text2: ''
   })
@@ -16,10 +16,22 @@ const createTexts = () => {
     })
   }
 
+  const switchTexts = () => {
+    update(({ text1, text2 }) => {
+      const temp = text1
+
+      return {
+        text1: text2,
+        text2: temp
+      }
+    })
+  }
+
   return {
     subscribe,
     set: sliceAcceptableTextsAndSet,
-    fillInExample: () => sliceAcceptableTextsAndSet(getExampleTexts())
+    fillInExample: () => sliceAcceptableTextsAndSet(getExampleTexts()),
+    switchTexts
   }
 }
 

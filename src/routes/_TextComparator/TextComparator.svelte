@@ -8,13 +8,27 @@
   const handleCompare = () => {
     diff.buildDiff($texts.text1, $texts.text2)
   }
+
+  const handleSwitchTexts = () => {
+    texts.switchTexts()
+
+    const hasDiff = $diff.left.length > 0
+
+    if (hasDiff) {
+      handleCompare()
+    }
+  }
+
   const handleFillInExample = () => {
     texts.fillInExample()
     handleCompare()
   }
 </script>
 
-<div class="flex justify-end">
+<div class="flex justify-end gap-2">
+  <Button appearance="secondary" on:click={handleSwitchTexts}>
+    Switch texts
+  </Button>
   <Button appearance="secondary" on:click={handleFillInExample}>
     Show example
   </Button>
