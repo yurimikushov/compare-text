@@ -35,3 +35,7 @@ Or build the app for `production` to the `build` folder
 ```
 npm run build
 ```
+
+## License
+
+[MIT](LICENSE)
