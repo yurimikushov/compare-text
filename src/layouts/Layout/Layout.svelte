@@ -18,4 +18,12 @@
   :global(body) {
     @apply bg-gradient-to-br from-blue-50 to-white;
   }
+
+  :global(a) {
+    @apply outline-none;
+  }
+
+  :global(a:focus-visible) {
+    @apply ring-2 ring-offset-1 ring-indigo-500;
+  }
 </style>
