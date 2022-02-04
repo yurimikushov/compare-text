@@ -1,4 +1,4 @@
-# Text comparator
+# Compare text
 
 A text comparator based on the [LCS](https://en.wikipedia.org/wiki/Longest_common_subsequence_problem) finding algorithm.
 
@@ -9,7 +9,7 @@ A text comparator based on the [LCS](https://en.wikipedia.org/wiki/Longest_commo
 Clone this repository, if you didn't it
 
 ```
-git clone https://github.com/yurimikushov/text-comparator.git
+git clone https://github.com/yurimikushov/compare-text.git
 ```
 
 Install deps
