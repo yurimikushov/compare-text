@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class={cn(className, 'px-0.5', {
+  class={cn(className, 'px-0.5 break-all', {
     'bg-red-200': line.removed,
     'bg-green-200': line.added,
     'bg-gray-100': line.dummy
