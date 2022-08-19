@@ -1,6 +1,7 @@
 <script lang="ts">
   import cn from 'classnames'
   import type { Line } from 'modules/diff'
+  import { isAddedWhiteSpace, isRemovedWhiteSpace } from './utils'
 
   export let className = ''
   export let line: Line
@@ -20,8 +21,8 @@
      -->
     <span
       class={cn({
-        'bg-red-400': token.removed,
-        'bg-green-400': token.added
+        'bg-red-400': token.removed || isRemovedWhiteSpace(i, line.childs),
+        'bg-green-400': token.added || isAddedWhiteSpace(i, line.childs)
       })}>{token.value}</span
     >
   {/each}
