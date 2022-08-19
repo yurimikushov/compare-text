@@ -14,13 +14,15 @@
   })}
 >
   {#each line.childs as token, i (i)}
+    <!--
+      Span opening tag and span closing tag must be on the same line of code,
+      otherwise the next white space be highlighted with color of current token ¯\_(ツ)_/¯
+     -->
     <span
       class={cn({
         'bg-red-400': token.removed,
         'bg-green-400': token.added
-      })}
+      })}>{token.value}</span
     >
-      {token.value}
-    </span>
   {/each}
 </div>
